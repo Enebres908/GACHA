@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Gacha Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<center>
+
+    <body>
+        <div class="container">
+            <h1>Gacha RNG & Pity Simulator</h1>
+
+            <!-- Settings Section -->
+            <div class="settings-box">
+                <div class="setting-item">
+                    <label for="baseRateInput"><strong>Base Drop Rate (%):</strong></label>
+                    <input type="number" id="baseRateInput" value="0.8" step="0.1" min="0.01">
+                </div>
+                <div class="setting-item">
+                    <label for="customPullInput"><strong>Custom Pull Amount:</strong></label>
+                    <input type="number" id="customPullInput" value="50" min="1">
+                    <button id="btnPullCustom">Pull Custom</button>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-box">
+                <p><strong>Total Pulls:</strong> <span id="totalPulls">0</span></p>
+                <p><strong>Current Pity:</strong> <span id="pityCount">0</span> / 90</p>
+                <p><strong>Next Drop Rate:</strong> <span id="dropRate">0.80%</span></p>
+                <p><strong>Status:</strong> <span id="guaranteedStatus">50/50 Active</span></p>
+                <p><strong>SSRs Obtained:</strong> <span id="ssrCount">0</span> (<span id="ssrRate">0.00%</span>)</p>
+                <p><strong>Featured / Standard:</strong> <span id="featuredVsStandard">0 / 0</span></p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="btnPull1">Pull 1x</button>
+                <button id="btnPull10">Pull 10x</button>
+                <button id="btnPull100">Pull 100x</button>
+                <button id="btn1000">Pull 1000x</button>
+                <button id="btnReset" class="reset-btn">Reset All</button>
+            </div>
+
+            <!-- Pull History Log -->
+            <h2>Pull History</h2>
+            <div class="log-box">
+                <ul id="logList"></ul>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</center>
+
+</html>
